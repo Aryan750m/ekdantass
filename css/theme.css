@@ -435,6 +435,8 @@ body.is-ready .page-hero img {
     border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
     border-radius: 999px;
     padding: 8px 13px;
+    align-self: flex-start;
+    width: fit-content;
 }
 
 .hero h1,
@@ -1637,6 +1639,7 @@ body.is-ready .hero-panel {
     margin-bottom: 24px;
 }
 
+.primary-banner .txt h1,
 .primary-banner .txt h2 {
     font-size: clamp(34px, 5vw, 58px);
     line-height: 1.1;
