@@ -728,8 +728,7 @@ main>section:not(.hero):not(.cta-band) {
 
 .service-card h3,
 .quality-card h3,
-.career-card h3,
-.contact-card h3 {
+.career-card h3 {
     margin: 0 0 10px;
     font-size: 18px;
     letter-spacing: 0;
