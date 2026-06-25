@@ -37,6 +37,15 @@
         });
     }
 
+    const navClose = document.querySelector(".nav-close");
+
+    function closeNav() {
+        if (!menu || !header || !navToggle) return;
+        menu.classList.remove("open");
+        header.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+    }
+
     if (navToggle && menu) {
         navToggle.setAttribute("aria-expanded", "false");
         navToggle.addEventListener("click", function () {
@@ -45,6 +54,12 @@
             if (header) {
                 header.classList.toggle("nav-open", isOpen);
             }
+        });
+    }
+
+    if (navClose) {
+        navClose.addEventListener("click", function () {
+            closeNav();
         });
     }
 
@@ -88,8 +103,12 @@
         });
     });
 
-    // Close dropdowns when clicking outside
+    // Close dropdowns and mobile nav when clicking outside
     document.addEventListener("click", function (e) {
+        if (menu && menu.classList.contains("open") && !e.target.closest(".site-header")) {
+            closeNav();
+        }
+
         if (!e.target.closest(".has-dropdown")) {
             document.querySelectorAll(".has-dropdown").forEach(function (li) {
                 li.classList.remove("open");
